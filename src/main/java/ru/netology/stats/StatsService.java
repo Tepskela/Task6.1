@@ -42,22 +42,11 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int quantityMonthAverage(long[] sales) {
-        int counter = 0;
-        for (long sale : sales) {
-            if (sale < average(sales)) {
-                ;
-                counter++;
-            }
-        }
-        return counter;
-    }
-
     public int quantityMonthHigherAverage(long[] sales) {
         int counter = 0;
+        long avarageSale = average(sales);
         for (long sale : sales) {
-            if (sale < average(sales)) {
-                ;
+            if (sale < avarageSale) {
                 counter++;
             }
         }
@@ -66,8 +55,9 @@ public class StatsService {
 
     public int quantityMonthLowAverage(long[] sales) {
         int counter = 0;
+        long avarageSale = average(sales);
         for (long sale : sales) {
-            if (sale > average(sales)) {
+            if (sale > avarageSale) {
                 ;
                 counter++;
             }
